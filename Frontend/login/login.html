@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="TRPL 23A1, Universitas Duta Bangsa" />
+        <meta name="keywords" content="login, form login, nim, password, masuk akun" />
+        <title>Login - TRPL 23A1</title>
+        <link rel="stylesheet" href="login.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="login-container">
+          <div class="logo">
+            <img src="logo.png" alt="Logo" />
+          </div>
+          <form>
+            <label for="nim">NIM</label>
+            <input
+              type="text"
+              id="nim"
+              name="nim"
+              placeholder="Masukkan NIM nya Gaes!"
+              required
+            />
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Masukkan Password nya Gaes!"
+              required
+            />
+            <button type="submit">Login</button>
+          </form>
+        </div>
+        <script src="login.js"></script>
+      </body>
+</html>   

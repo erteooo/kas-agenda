@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    background: linear-gradient(170deg, #573400, #000000);
+    padding: 2em 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.navul-navbar {
+    justify-content: center;
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navul-navbar li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+    transition: background 0.3s ease, box-shadow 0.5s ease, color 0.3s ease;
+}
+
+.navul-navbar li a:hover {
+    background: linear-gradient(90deg, #ff4b2b, #ff416c);
+    box-shadow: 0 0 10px #ff4b2b, 0 0 20px #ffffff, 0 0 30px #444000;
+    color: #000000;
+}
+

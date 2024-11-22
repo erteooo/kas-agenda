@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Teknologi Rekayasa Perangkat Lunak 23A1">
+    <meta name="keywords" content="TRPL, Teknologi Rekayasa Perangkat Lunak, 23A1, UDB, Universitas Duta Bangsa">
+    <title>Lapran Kas - TRPL 23A1</title>
+    <link rel="stylesheet" href="laporankas.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar" aria-label="Main Navigation">
+            <ul class="navul-navbar">
+                <li><a href="../jadwal/jadwal.html">Jadwal</a></li>
+                <li><a href="../agenda/agenda.html">Agenda</a></li>
+                <li><a href="laporankas.html">Laporan Kas</a></li>
+                <li><a href="../bantuan/bantuan.html">Bantuan</a></li>
+            </ul>
+         </nav>
+    </header>
+
+    <main>
+        <!-- Keuangan Kelas -->
+        <section id="finance">
+            <h2>Keuangan Kelas</h2>
+            <div class="finance-container">
+              <div>
+                <label for="income">Pemasukan (Rp):</label>
+                <input type="number" id="income" placeholder="Masukkan jumlah pemasukan">
+              </div>
+              <div>
+                <label for="expense">Pengeluaran (Rp):</label>
+                <input type="number" id="expense" placeholder="Masukkan jumlah pengeluaran">
+              </div>
+              <button onclick="updateFinance()">Tambah Data</button>
+            </div>
+            <p class="finance-summary" id="finance-summary">Saldo saat ini: Rp ' + balance + '</p>
+            <canvas id="finance-chart"></canvas>
+          </section>
+
+    </main>
+    <script src="laporankas.js"></script>
+</body>
+</html>
