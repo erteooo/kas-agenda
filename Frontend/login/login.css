@@ -1,158 +1,230 @@
 /* Reset dan pengaturan dasar */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-image: url('bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-  
-  /* Overlay pada body */
-  body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Overlay gelap */
-    z-index: 0; /* Di bawah konten */
-  }
-  
-  .login-container {
-    position: relative;
-    z-index: 1; /* Di atas overlay */
-    width: 350px;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.8); /* Warna solid transparan */
-    border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7); /* Efek bayangan lembut */
-    text-align: center;
-    animation: fadeIn 1s ease-in-out; /* Animasi masuk */
-  }
-  
-  /* Animasi masuk */
-  @keyframes fadeIn {
-    from {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-bg: rgba(0, 0, 0, 0.8);
+  --primary-color: #ffffff;
+  --error-color: red;
+  --success-color: greenyellow;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--primary-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: fadeIn 3s ease-in-out;
+}
+
+/* Overlay pada body */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+/* Logo dinamis */
+.logo {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
+}
+
+.login-container {
+  position: relative;
+  z-index: 1;
+  width: 350px;
+  padding: 30px;
+  background: var(--primary-bg);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  animation: fadeIn 5s ease-in-out;
+}
+
+/* Animasi masuk */
+@keyframes fadeIn {
+  from {
       opacity: 0;
       transform: translateY(-20px);
-    }
-    to {
+  }
+  to {
       opacity: 1;
       transform: translateY(0);
-    }
   }
-  
-  /* Logo dinamis */
-  .logo {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Gaya judul */
+.login-container h2 {
+  margin: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.login-container p {
+  margin-bottom: 25px;
+  font-size: 16px;
+  color: var(--primary-color);
+}
+
+/* Input form */
+.login-container label {
+  margin-top: 20px;
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+  font-size: 14px;
+  color: var(--primary-color);
+}
+
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fdfdfd;
+  font-size: 12px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.login-container input:invalid {
+  border-top: 2px solid var(--error-color);
+  border-bottom: 2px solid var(--error-color);
+}
+
+.login-container input:valid:not(:placeholder-shown) {
+  border-top: 2px solid var(--success-color);
+  border-bottom: 2px solid var(--success-color);
+}
+
+.login-container input::placeholder {
+  color: #ffffff;
+}
+
+.login-container input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.login-container input:focus-visible {
+  outline: 2px solid #ffffff; /* A visible outline for focused elements */
+}
+
+/* Tombol login */
+.login-container button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(20deg, #000000, #292929); /* Gradasi tombol */
+  color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease ```css
+}
+
+.login-container button:hover {
+  transform: scale(1.05);
+  color: #000000;
+  background: linear-gradient(90deg, #c5c5c5, #838383);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Pesan kesalahan */
+#error-message {
+  color: var(--error-color);
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Animasi masuk */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .login-container {
+      width: 100%;
   }
 
-  .login-container {
-    position: relative;
-    z-index: 1; /* Di atas overlay */
-    width: 350px;
-    padding: 50px;
-    background: rgba(255, 255, 255, 0.8); /* Warna solid transparan */
-    border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7); /* Efek bayangan lembut */
-    text-align: center;
-    animation: fadeIn 1s ease-in-out; /* Animasi masuk */
-  }
-  
-  .logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .logo:hover img {
-    transform: scale(1.1);
-  }
-  
-  /* Gaya judul */
   .login-container h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #000000;
+    font-size: 18px;
   }
-  
-  /* Input form */
-  .login-container label {
-    display: block;
-    margin: 10px 0 5px;
+
+  .login-container p {
     font-size: 14px;
-    color: #000000;
   }
-  
-  .login-container input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #000000;
+
+  .login-container label {
     font-size: 12px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
   }
-  
-  .login-container input::placeholder {
-    color: #000000;
+
+  .login-container input {
+    font-size: 10px;
   }
-  
-  .login-container input:focus {
-    outline: none;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 8px rgba(116, 98, 0, 0.5);
-  }
-  
-  /* Tombol login */
+
   .login-container button {
-    margin-top: 20px;
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(20deg, #000000, #ddd8cc); /* Gradasi tombol */
-    color: white;
-    border: none;
-    border-radius: 8px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container h2 {
     font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 15px rgba(148, 101, 0, 0.5);
   }
-  
-  .login-container button:hover {
-    color: #000000;
-    background: linear-gradient(90deg, #aa7400, #b21f1f); /* Gradasi hover */
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.4);
+
+  .login-container p {
+    font-size: 12px;
   }
-  
-  /* Responsif untuk perangkat kecil */
-  @media (max-width: 480px) {
-    .login-container {
-      width: 90%;
-      padding: 20px;
-    }
+
+  .login-container label {
+    font-size: 10px;
   }
-  
+
+  .login-container input {
+    font-size: 8px;
+  }
+
+  .login-container button {
+    font-size: 12px;
+  }
+}

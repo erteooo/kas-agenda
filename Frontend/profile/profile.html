@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="navul-navbar">
+                <li><a href="../index/index.html">Home</a></li>
+                <li><a href="../laporankas/laporankas.html">Laporan Kas</a></li>
+                <li><a href="../agenda/agenda.html">Agenda</a></li>
+                <li><a href="../bantuan/bantuan.html">Bantuan</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="profile-container">
+            <div class="profile-header">
+                <img src="profile-pic.png" alt="Profile Picture" class="profile-pic">
+                <h1 class="profile-name">''</h1>
+                <p class="profile-role">''</p>
+            </div>
+            <div class="profile-details">
+                <h2>Akun Saya</h2>
+                <div class="detail-item">
+                    <strong>NIM:</strong>''
+                </div>
+                <div class="detail-item">
+                    <strong>Email:</strong>''
+                </div>
+                <div class="detail-item">
+                    <strong>Phone:</strong>''
+                </div>
+            </div>
+            <div id="editProfileModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Edit Profile</h2>
+                    <form id="editProfileForm">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <button type="submit">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+            <div class="profile-actions">
+                <button class="edit-button">Edit Profile</button>
+                <button class="logout-button">Logout</button>
+            </div>
+        </div>
+    </main>
+    <script src="profile.js"></script>
+</body>
+</html>

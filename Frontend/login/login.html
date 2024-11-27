@@ -1,39 +1,40 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="TRPL 23A1, Universitas Duta Bangsa" />
-        <meta name="keywords" content="login, form login, nim, password, masuk akun" />
-        <title>Login - TRPL 23A1</title>
-        <link rel="stylesheet" href="login.css">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="login-container">
-          <div class="logo">
-            <img src="logo.png" alt="Logo" />
-          </div>
-          <form>
-            <label for="nim">NIM</label>
-            <input
-              type="text"
-              id="nim"
-              name="nim"
-              placeholder="Masukkan NIM nya Gaes!"
-              required
-            />
-            <label for="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Masukkan Password nya Gaes!"
-              required
-            />
-            <button type="submit">Login</button>
-          </form>
-        </div>
-        <script src="login.js"></script>
-      </body>
-</html>   
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <title>Login Page</title>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="logo">
+        <img src="logo.png" alt="Logo" />
+      </div>
+      <h2>Login</h2>
+      <p>Silakan masukkan NIM dan Password Anda</p>
+      <label for="nim">NIM</label>
+      <input
+        type="text"
+        id="nim"
+        placeholder="Masukkan NIM"
+        required
+        minlength="9"
+      />
+
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="Masukkan Password"
+        required
+        minlength="8"
+      />
+
+      <button id="login-button">Login</button>
+      <div id="error-message"></div>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>

@@ -43,12 +43,78 @@ header {
     padding: 8px 16px;
     border-radius: 4px;
     transition: all 0.3s ease;
-    position: relative;
-    transition: background 0.3s ease, box-shadow 0.5s ease, color 0.3s ease;
 }
 
 .navul-navbar li a:hover {
     background: linear-gradient(90deg, #ff4b2b, #ff416c);
-    box-shadow: 0 0 10px #ff4b2b, 0 0 20px #ffffff, 0 0 30px #444000;
-    color: #000000;
+    color: #fff;
+}
+
+main {
+    padding-top: 50px; /* Adjust this value based on the height of your navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 0.5; /* Allow main to take up remaining space */
+}
+
+.table-container {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+    overflow: hidden; /* Prevents border radius from affecting table */
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Ensure it takes full width */
+    background-color: #0000;
+
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevents border radius from affecting table */
+    animation: fadeIn 3s ease-in-out, popIn 1s ease-in-out;
+}
+
+th, td {
+    border: 1px solid #ffc400;
+    padding: 12px; /* Increase padding for better spacing */
+    text-align: left;
+    font-size: 1rem; /* Adjust font size for readability */
+}
+
+th {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff; /* Ensure text is readable */
+    font-weight: bold; /* Bold text for headers */
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: translateY(100px);
+    }
+    to {
+        transform: translateY(0);
+    }
 }

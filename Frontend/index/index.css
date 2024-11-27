@@ -33,17 +33,14 @@ body {
   height: 400px;
   display: flex;
   margin-bottom: 20px;
-  cursor: pointer;
   transition: transform 0.3s ease-in-out;
   z-index: 1;
   border-radius: 10px;
 }
 
 .logo img {
-  bottom: 0;
-  right: 0;
   width: 100%;
-  height: 100%;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32"><text y="20" font-size="20">🔥</text></svg>'), auto;
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
 }
@@ -63,7 +60,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s;
   z-index: 1;
   position: relative;
   overflow: hidden;
@@ -73,6 +70,7 @@ body {
 .login-button:hover {
   color: #a85f00;
   z-index: 2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .login-form {
