@@ -1,230 +1,205 @@
-/* Reset dan pengaturan dasar */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --primary-bg: rgba(0, 0, 0, 0.8);
-  --primary-color: #ffffff;
-  --error-color: red;
-  --success-color: greenyellow;
-}
-
+/* General Reset */
 body {
-  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-image: url('bg.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(5px);
+  backdrop-filter: blur(2px);
   background-attachment: fixed;
-  color: var(--primary-color);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  overflow: hidden;
   animation: fadeIn 3s ease-in-out;
 }
 
-/* Overlay pada body */
-body::before {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Container for login box */
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animation background */
+.container::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 60%);
+  background-size: 150% 150%;
+  animation: bg-animate 10s linear infinite;
+  z-index: -1;
 }
 
-/* Logo dinamis */
-.logo {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 20px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
+/* Keyframes for background */
+@keyframes bg-animate {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
 }
 
-.login-container {
+/* Login Box */
+.login-box {
   position: relative;
-  z-index: 1;
   width: 350px;
-  padding: 30px;
-  background: var(--primary-bg);
-  border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
   text-align: center;
-  animation: fadeIn 5s ease-in-out;
+  color: #ffffff;
+  filter: grayscale(5px);
+  backdrop-filter: blur(10px);
 }
 
-/* Animasi masuk */
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-      transform: translateY(-20px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-.logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Gaya judul */
-.login-container h2 {
-  margin: 10px;
+/* Heading */
+.login-box h2 {
+  margin-bottom: 5px;
   font-size: 24px;
   font-weight: bold;
-  color: var(--primary-color);
+  text-transform: uppercase;
 }
 
-.login-container p {
-  margin-bottom: 25px;
-  font-size: 16px;
-  color: var(--primary-color);
-}
-
-/* Input form */
-.login-container label {
-  margin-top: 20px;
-  display: block;
-  text-align: left;
-  margin: 10px 0 5px;
-  font-size: 14px;
-  color: var(--primary-color);
-}
-
-.login-container input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fdfdfd;
+.login-box p {
+  display: inline-flex;
+  margin-bottom: 40px;
   font-size: 12px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.login-container input:invalid {
-  border-top: 2px solid var(--error-color);
-  border-bottom: 2px solid var(--error-color);
-}
-
-.login-container input:valid:not(:placeholder-shown) {
-  border-top: 2px solid var(--success-color);
-  border-bottom: 2px solid var(--success-color);
-}
-
-.login-container input::placeholder {
-  color: #ffffff;
-}
-
-.login-container input:focus {
-  outline: none;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-}
-
-.login-container input:focus-visible {
-  outline: 2px solid #ffffff; /* A visible outline for focused elements */
-}
-
-/* Tombol login */
-.login-container button {
-  margin-top: 20px;
-  width: 100%;
-  padding: 12px;
-  background: linear-gradient(20deg, #000000, #292929); /* Gradasi tombol */
-  color: var(--primary-color);
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
   font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease ```css
+  text-transform: uppercase;
 }
 
-.login-container button:hover {
-  transform: scale(1.05);
-  color: #000000;
-  background: linear-gradient(90deg, #c5c5c5, #838383);
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.4);
+/* Input Boxes */
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
 }
 
-/* Pesan kesalahan */
-#error-message {
-  color: var(--error-color);
-  margin-top: 10px;
+.input-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #15ff00;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 2px solid #fff;
+  background: transparent;
+  outline: none;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.input-box label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: 16px;
+  color: #ffffff;
+  pointer-events: none;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #74ebd5;
   font-size: 14px;
 }
 
-/* Animasi masuk */
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-      transform: translateY(-20px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
+/* Button */
+.btn {
+  width: 100%;
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+  border: none;
+  padding: 10px 0;
+  font-size: 16px;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #9face6, #74ebd5);
+  transform: scale(1.05);
+}
+
+/* Forgot Password Link */
+.forgot-password {
+  margin-top: 10px;
+}
+
+.forgot-password a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.forgot-password a:hover {
+  color: #74ebd5;
 }
 
 @media (max-width: 768px) {
-  .login-container {
-      width: 100%;
+  .body {
+    background-size: cover;
   }
-
-  .login-container h2 {
-    font-size: 18px;
-  }
-
-  .login-container p {
-    font-size: 14px;
-  }
-
-  .login-container label {
-    font-size: 12px;
-  }
-
-  .login-container input {
-    font-size: 10px;
-  }
-
-  .login-container button {
-    font-size: 14px;
+  .login-box {
+    width: 100%;
+    max-width: 400px;
   }
 }
 
+/* Media Query for smaller screens */
 @media (max-width: 480px) {
-  .login-container h2 {
-    font-size: 16px;
+  .body {
+    background-size: cover;
   }
-
-  .login-container p {
-    font-size: 12px;
+  .login-box {
+    width: 100%;
+    max-width: 400px;
   }
+}
 
-  .login-container label {
-    font-size: 10px;
+@media (max-widht: 320px) {
+  .body {
+    background-size: cover;
   }
-
-  .login-container input {
-    font-size: 8px;
+  .login-box {
+    width: 100%;
+    max-width: 400px;
   }
+}
 
-  .login-container button {
-    font-size: 12px;
+@media (max-widht: 240px) { 
+  .body {
+    background-size: cover;
+  }
+  .login-box {
+    width: 100%;
+    max-width: 400px;
   }
 }
